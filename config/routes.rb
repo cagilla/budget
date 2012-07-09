@@ -1,4 +1,6 @@
 Budget::Application.routes.draw do
+  resources :transactions
+
   get "accounts/index"
   resources :accounts
 

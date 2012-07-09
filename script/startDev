@@ -1,0 +1,5 @@
+#!/bin/bash
+xterm -iconic -e rails server &
+gedit doc/todo.txt &
+sleep 2
+google-chrome http://localhost:3000 &

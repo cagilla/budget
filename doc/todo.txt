@@ -1,0 +1,4 @@
+1) Update how transactions are displayed on Account -> Show
+2) Add button for new transaction in Account -> Show
+3) Add Delete button on each transaction
+4) New Account should ask for starting balance.

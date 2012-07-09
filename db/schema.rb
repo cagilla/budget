@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707162319) do
+ActiveRecord::Schema.define(:version => 20120707190625) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(:version => 20120707162319) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.date     "date"
+    t.integer  "check"
+    t.string   "description"
+    t.decimal  "amount"
+    t.string   "category"
+    t.text     "note"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "account_id"
   end
 
 end
