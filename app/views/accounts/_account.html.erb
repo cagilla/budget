@@ -1,0 +1,30 @@
+<div class="account_title"><%= account.name %></div>
+<div class='transactions'>
+<table>  
+  <tr>
+    <td>Num</td>
+    <td>Date</td>
+    <td>Chk #</td>
+    <td>Payee</td>
+    <td>Amount</td>
+    <td>Note</td>
+    <td>Balance</td>
+  </tr>
+  <% balance = 0 %>
+  <% i=0 %>
+  <% @transactions.each do |transaction| %>
+    <% balance += transaction.amount
+       i += 1 %>
+	<tr>
+		<td><%= i %></td>
+		<td><%= transaction.date %></td>
+		<td><%= transaction.check %></td>
+		<td><%= transaction.description %></td>
+		<td><%= transaction.amount %></td>
+		<td><%= transaction.note %></td>
+		<td><%= balance %></td>
+	</tr>
+ <% end %>
+</table>
+
+</div>

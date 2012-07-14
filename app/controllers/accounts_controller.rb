@@ -14,6 +14,12 @@ class AccountsController < ApplicationController
   # GET /accounts/1.json
   def show
     @account = Account.find(params[:id])
+    find_options = {:conditions=>{:account_id => @account.id}}
+#    find_options = get_sort_options(params, find_options)
+#    find_options = get_filter_options(params, find_options)
+#    find_options = get_paging_options(params, find_options)
+
+    @transactions = Transaction.all(find_options)
 
     respond_to do |format|
       format.html # show.html.erb
